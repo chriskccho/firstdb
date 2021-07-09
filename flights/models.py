@@ -24,6 +24,7 @@ class Flight(models.Model):
 class Passenger(models.Model):
     first = models.CharField(max_length=64)
     last = models.CharField(max_length=64)
+    #many to many relationships, flight can have many passengers and a passenger can have many flights
     flights = models.ManyToManyField(Flight, blank=True, related_name="passengers")
 
     def __str__(self):
